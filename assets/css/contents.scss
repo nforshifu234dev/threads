@@ -1,0 +1,383 @@
+/*Importing/Including all neccessary files */
+
+
+
+/** This is the parent container that holds evrything  **/
+
+.parent-container
+{
+    width: 100%;
+    height: 100%;
+    display: flex ;
+    overflow: hidden ;
+    flex-direction: column-reverse;
+}
+
+    /* Menu Container */
+
+    .parent-container .nav-menu
+    {
+        height: 7vh;
+        border-top: 1px solid var(--bg-dark);
+        
+    }
+
+    .nav-menu .general-menu-items
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    .parent-container .nav-menu,
+    .nav-menu .general-menu-items,
+    .parent-container .nav-menu .nav-item 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo .logo-name
+    {
+        font-weight: bold;
+    }
+
+    .parent-container .nav-menu .nav-item 
+    {
+        width: 20%;
+        height: 100%;
+        margin: 0 10px;
+    }
+
+    .parent-container .nav-menu .nav-item .icon
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: rgb( var(--grey-6) );
+    }
+
+    .parent-container .nav-menu .nav-item .icon svg
+    {
+        fill: currentColor !important;
+        width:  40px;
+        height: 40px;
+    }
+
+    .parent-container .nav-menu .nav-item.active .icon svg
+    {
+        fill: var(--txt-black) !important;
+    }
+
+    .parent-container .nav-menu .nav-item .message
+    {
+        display: none;
+        letter-spacing: 0.3px;
+        white-space-collapse: collapse;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        max-width: 100%;
+        overflow-y: hidden;
+    }
+
+    .parent-container .nav-menu .nav-item.active .message
+    {
+        font-weight: bold;
+    }
+
+    .parent-container .nav-menu  .profile-col
+    {
+        height: calc( 50px);
+        width: 50px;
+        border-radius: 50%;
+        padding: 0.2rem;
+        background: var(--bg-dark);
+        color: var(--txt-white);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parent-container .nav-menu .profile-col .icon img
+    {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    @media screen and (max-width: 550px) 
+    {
+
+        .parent-container .nav-menu .nav-item .icon svg
+        {
+            fill: currentColor !important;
+            width:  23px;
+            height: 23px;
+        }
+
+        .parent-container .nav-menu  .profile-col
+        {
+            height: 30px;
+            width:  30px;
+        }
+
+    }
+
+    // @media screen and (max-width: 400px) 
+    // {
+
+    //     .parent-container .nav-menu .nav-item .icon svg
+    //     {
+    //         fill: currentColor !important;
+    //         width:  25px;
+    //         height: 25px;
+    //     }
+
+    // }
+
+
+    /* Menu Container  End*/
+
+    /* Contents container start*/
+
+        .parent-container .contents
+        {
+            height: max-content;
+            overflow-y: auto;
+            overflow-x: hidden !important;
+            display: flex;
+        }
+
+        .parent-container .contents .feed,
+        .parent-container .contents .sidedetails
+        {
+            height: max-content;
+        }
+
+        .parent-container .contents .sidedetails
+        {
+            width: 400px;
+        }
+
+        .parent-container .contents .sidedetails section,
+        .parent-container .contents .sidedetails .section
+        {
+            height: max-content;
+            border: var(--bg-dark) solid 1px ;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .parent-container .contents .sidedetails section .heading,
+        .parent-container .contents .sidedetails .section .heading
+        {
+            padding: 1rem;
+            height: 60px;
+            background-color: var(--bg-dark);
+            color: var(--txt-white);
+            font-size: calc(100% + 0.2rem);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            border-bottom: var(--bg-dark) solid 1px;
+            border-top: var(--bg-dark) solid 1px;
+        }
+
+
+        .parent-container .contents .sidedetails section .heading svg,
+        .parent-container .contents .sidedetails .section .heading svg
+        {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            fill: currentColor;
+        }
+
+        .parent-container .contents .sidedetails section .body,
+        .parent-container .contents .sidedetails .section .body
+        {
+            height: max-content;
+            padding: 0.5rem;
+        }
+
+
+
+        .ig-profile-stats
+        {
+            width: 100%;
+            display: block;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username
+        {
+            display: flex;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .profile-pic
+        {
+            background: var(--bg-dark);
+            border-radius: 50%;
+            // padding: 0.1rem;
+            margin-right: 10px;
+            height: max-content;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .profile-pic img
+        {
+            border-radius: 50%;
+
+            width:  60px;
+            height: 60px;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username
+        {
+                width: calc(100% - 70px);
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .name
+        {
+            font-weight: bold;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .username
+        {
+            font-size: calc(100% - 0.1rem);
+            margin-bottom: 5px;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .bio
+        {
+            
+            font-size: calc(100% - 0.05rem);
+            word-wrap: break-word;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .links,
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .links a
+        {
+            margin: 4px 0;
+            display: block;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username .links a
+        {
+            font-size: small;
+        }
+
+        .followers-following-posts span
+        {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username  .view-account 
+        {
+            text-align: right;
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username  .view-account .btn
+        {
+            background: var(--bg-dark);
+            display: inline-block;
+            padding: 0.7rem;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: var(--txt-white);
+            fill: var(--txt-white);
+        }
+
+        .ig-profile-stats .profile-pic-and-name-and-username .name-and-username  .view-account svg
+        {
+            width: 20px;
+            height: 20px;
+        }
+
+
+
+    /* Side Contents */
+
+
+
+
+    /*Side Contents End */
+
+
+    /* Footer Styling Start*/
+
+        .footer
+        {
+            padding: 0 0.5rem;
+        }
+
+        .footer .footer-links
+        {
+            margin-bottom: 10px;
+        }
+
+        .footer .footer-links a
+        {
+            display: inline-flex;
+            text-transform: capitalize;
+            margin: 3px 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .footer .footer-links a::after
+        {
+            content: ".";
+            position: relative;
+            margin: 0 3px;
+        }
+
+        .footer .copyright-message
+        {
+            text-transform: capitalize;
+        }
+
+
+    /* Footer Styling End*/
+
+
+
+
+    /* Animations  Start*/
+
+        /*  spin animation start*/
+
+            .spin 
+            {
+                animation: spin 1.5s linear infinite;
+            }
+            
+            
+            
+            @keyframes spin {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+        /*  spin animation  end*/
+
+    /* Animations End  */
+
+
+
+
+/*Contents container End */
+
+
+

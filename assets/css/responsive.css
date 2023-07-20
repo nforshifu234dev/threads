@@ -1,0 +1,106 @@
+/*Importing/Including all neccessary files */
+/* Styling for when the screen width is 500px and above */
+@media screen and (min-width: 500px) {
+  /* This is the parent container that holds evrything  */
+  .parent-container {
+    flex-direction: row;
+  }
+  /* Menu Container */
+  .parent-container .nav-menu {
+    width: 100px;
+    border-top: none !important;
+    border-right: 1px solid var(--bg-dark);
+    height: 100%;
+    margin-right: 10px;
+    justify-content: space-between;
+  }
+  .parent-container .nav-menu,
+  .nav-menu .general-menu-items,
+  .parent-container .nav-menu .nav-item {
+    flex-direction: column;
+  }
+  .nav-menu .general-menu-items {
+    padding: 0.5rem;
+    justify-content: flex-start;
+  }
+  .nav-menu .general-menu-items .nav-item {
+    flex-direction: row;
+    width: 100% !important;
+  }
+  .parent-container .nav-menu .nav-item,
+  .parent-container .nav-menu .profile-col {
+    width: 90%;
+    height: 50px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 20px;
+  }
+  .parent-container .nav-menu .profile-col {
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .parent-container .nav-menu .nav-item .icon {
+    width: -moz-max-content;
+    width: max-content;
+    width: 45px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .parent-container .nav-menu .nav-item .message {
+    max-width: 100%;
+    padding: 0.2rem;
+  }
+  .parent-container .nav-menu .nav-item .icon svg {
+    fill: currentColor !important;
+    width: 25px;
+    height: 25px;
+  }
+  /* Menu Container End*/
+  /* Contents container start*/
+  .parent-container .contents {
+    height: 100%;
+    width: 100%;
+  }
+  /* Contents container End*/
+}
+/* Styling for when the screen width is 500px and above End*/
+/* Styling for when the screen width is 1000px and above End*/
+@media screen and (min-width: 1000px) {
+  .display-on-large {
+    display: block !important;
+  }
+  .contents .feed .posts .thread,
+  .thread-reply-container,
+  .thread-footer {
+    width: 450px;
+  }
+}
+/* Styling for when the screen width is 1000px and above End*/
+/* Styling for when the screen width is 1200px and above End*/
+@media screen and (min-width: 1200px) {
+  .display-on-x-large {
+    display: block !important;
+  }
+  /* Menu Container */
+  .parent-container .nav-menu {
+    width: 250px;
+  }
+  .parent-container .nav-menu .nav-item {
+    justify-content: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .parent-container .nav-menu .nav-item .message {
+    display: block;
+  }
+  .parent-container .nav-menu .nav-item .icon svg {
+    fill: currentColor !important;
+    width: 25px;
+    height: 25px;
+  }
+  /* Menu Container End*/
+}
+/* Styling for when the screen width is 1200px and above End*//*# sourceMappingURL=responsive.css.map */

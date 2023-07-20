@@ -1,0 +1,594 @@
+/*Importing/Including all neccessary files */
+/* Posts Feed start*/
+.feed {
+  width: 100%;
+  padding: 0.5rem;
+  position: relative;
+}
+
+/* New Thread Notification Styling Start*/
+.feed .new-threads-container {
+  position: sticky;
+  z-index: 20;
+  top: 10px;
+  width: 98%;
+  display: block;
+  justify-content: center;
+  display: none;
+}
+
+.feed .new-threads-container .new-threads {
+  width: 200px;
+  width: -moz-max-content;
+  width: max-content;
+  height: 40px;
+  background: var(--bg-dark);
+  border-radius: 20px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  pointer-events: none;
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs .new-threads-profile-img {
+  height: 100%;
+  width: 28px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  margin-left: -12px;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs .new-threads-profile-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs .new-threads-profile-img svg {
+  width: 90%;
+  height: 90%;
+  fill: var(--txt-white);
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs .new-threads-profile-img:first-of-type {
+  margin-left: 0;
+}
+
+.feed .new-threads-container .new-threads .new-threads-profile-imgs .new-threads-profile-img:last-of-type {
+  z-index: 4;
+}
+
+/* New Thread Notification Styling End*/
+/* Thread Styling*/
+.thread {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+  border-bottom: var(--bg-dark) solid 1px;
+  margin: 10px auto;
+  position: relative !important;
+}
+
+/* Styling the links in a Thread*/
+.thread a:hover {
+  text-decoration: none;
+}
+
+/* Styling the links in a Thread End*/
+/* Styling the contents of a Thread*/
+.thread .thread-contents {
+  display: flex;
+}
+
+/* Styling the Profile picture of a Thread post*/
+.thread .thread-profile-pic-container {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.thread .thread-profile-pic {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+}
+
+.thread .thread-profile-pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Styling the Profile picture of a Thread post End*/
+/* Styling of the reply thread of a Thread (the straight line before the curly line) */
+.thread .thread-thread {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 1.8px;
+  overflow: hidden;
+  height: calc(100% - 53px);
+  /* Rememeber to change this grey color*/
+  background: grey;
+  border-radius: 10px;
+  transform: translate(1300%, 0%);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling of the reply thread of a Thread (the straight line before the curly line)  End*/
+/* Styling of the Not Following button of a Thread */
+.thread .thread-profile-pic .thread-profile-is-not-following {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: 2px solid var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thread .thread-profile-pic .thread-profile-is-not-following svg {
+  width: 90%;
+  height: 90%;
+  fill: var(--txt-white);
+}
+
+/* Styling of the Not Following button of a Thread  End*/
+/* Styling the Body of a Thread*/
+.thread .thread-body {
+  width: calc(100% - 60px);
+}
+
+/* Styling the Heading of a Thread (username, time, and menu) */
+.thread .thread-body .thread-body-header,
+.thread .thread-body .thread-body-header .thread-username-and-time {
+  width: 100%;
+  display: block;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+/* Styling the time and username of the header*/
+.thread .thread-body .thread-body-header .thread-username-and-time {
+  padding-right: 10px;
+}
+
+.thread .thread-body .thread-body-header .thread-username-and-time .thread-username {
+  font-weight: bold;
+  color: var(--txt-dark);
+  display: flex;
+  align-items: center;
+}
+
+.thread .thread-body .thread-body-header .thread-username-and-time .thread-username .verified {
+  margin-left: 4px;
+}
+
+.thread .thread-body .thread-body-header .thread-username-and-time .thread-time {
+  font-size: calc(100% - 2px);
+  color: grey;
+}
+
+/* Styling the time and username of the header End*/
+/* Styling the menu for each Thread*/
+.thread .thread-body-header .thread-options-menu-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-white);
+  border: 1.5px solid var(--bg-dark);
+  border-radius: 10px;
+  z-index: 5;
+  display: none;
+}
+
+.thread .thread-body-header .thread-options-menu-container .thread-options-menu-item {
+  height: 40px;
+  width: 100%;
+  background: #fafafa;
+  border-bottom: 1.5px solid var(--bg-dark);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: left;
+  text-transform: capitalize;
+  font-weight: bold;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  cursor: default;
+}
+
+.thread .thread-body-header .thread-options-menu-container .thread-options-menu-item:last-of-type {
+  border-bottom: none;
+}
+
+.thread .thread-body-header .thread-options-menu-container .thread-options-menu-item svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+/* Styling the menu for each Thread End*/
+/* Styling the Heading of a Thread (username, time, and menu) End*/
+/* Styling the Body of a Thread Body(media, caption) */
+.thread .thread-body .thread-body-body {
+  position: relative;
+}
+
+/* Styling the caption/Text contents of a Thread*/
+.thread .thread-body .thread-body-body .thread-caption {
+  word-break: break-all;
+  word-wrap: break-word;
+  line-height: 23px;
+  margin-bottom: 5px;
+}
+
+/* Styling the caption/Text contents of a Thread End*/
+/* Styling the Media Container of a Thread*/
+.thread .thread-medias-container {
+  position: relative;
+  width: 100%;
+}
+
+.thread .thread-body .thread-body-body .thread-medias {
+  max-width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.thread .thread-body .thread-body-body .thread-medias::-webkit-scrollbar {
+  display: none;
+}
+
+/* Styling a single Media Container of a Thread */
+.thread .thread-body .thread-body-body .thread-medias .thread-media {
+  flex: 0 0 auto;
+  width: 100%;
+  overflow: hidden;
+  max-height: 300px;
+  position: relative;
+}
+
+/*Styling the Video & Image of a single Media Container in a Thread */
+.thread .thread-body .thread-body-body .thread-medias .thread-media video,
+.thread .thread-body .thread-body-body .thread-medias .thread-media img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  pointer-events: none !important;
+  border: 1px solid grey;
+  padding: 0.3rem;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread-media.inline-image img,
+.thread .thread-body .thread-body-body .thread-medias .thread-media video {
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+}
+
+/* Image*/
+.thread .thread-body .thread-body-body .thread-medias .thread-media img {
+  width: 100%;
+}
+
+/* Image End */
+/* Video */
+/* Styling the Mute Button*/
+.thread .thread-body .thread-body-body .thread-medias .thread-media .mute-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  color: var(--txt-white);
+  fill: var(--txt-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread-media .mute-btn svg {
+  width: 60%;
+  height: 60%;
+}
+
+/* Styling the Mute Button End*/
+/* Styling the overlay item of a video (either the play button, loading button, or play again button)*/
+.thread .thread-body .thread-body-body .thread-medias .thread-media .thread-media-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread-media .thread-media-loading svg {
+  width: 20%;
+  height: 20%;
+  fill: var(--txt-white);
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread-media .thread-media-loading .playAgain {
+  width: 100%;
+  height: 100%;
+  width: 200px;
+  height: 60px;
+  font-weight: 600;
+  background: var(--bg-white);
+  border-radius: 5px;
+  color: var(--txt-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread-media .thread-media-loading .playAgain svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  fill: var(--txt-black);
+}
+
+/* Styling the overlay item of a video (either the play button, loading button, or play again button) End*/
+/* Video End*/
+/*Styling the Video & Image of a single Media Container in a Thread  End*/
+/* Styling a single Media Container of a Thread End*/
+/* Styling the Next and Previous buttons to navigate a single Media if more than 1*/
+.thread .thread-body .thread-body-body .thread-medias-container .thread-media-arrow {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  background: var(--bg-dark);
+  color: var(--txt-white);
+  fill: var(--txt-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.thread .thread-body .thread-body-body .thread-medias-container .prev {
+  left: 10px;
+}
+
+.thread .thread-body .thread-body-body .thread-medias-container .prev svg {
+  transform: rotate(270deg);
+}
+
+.thread .thread-body .thread-body-body .thread-medias-container .next {
+  right: 10px;
+}
+
+.thread .thread-body .thread-body-body .thread-medias-container .next svg {
+  transform: rotate(90deg);
+}
+
+/* Styling the Next and Previous buttons to navigate a single Media if more than 1 End*/
+/* Styling the Body of a Thread (media, caption)  End*/
+/* Styling a Thread in a Thread (Either Quoted Thread or Reposted Thread)*/
+.thread .thread-body .thread-body-body .thread-medias .thread {
+  max-width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 0;
+  border: var(--bg-dark) solid 1px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread .thread-username-and-time .thread-time,
+.thread .thread-body .thread-body-body .thread-medias .thread .thread-options {
+  display: none;
+}
+
+.thread .thread-body .thread-body-body .thread-medias .thread .thread-profile-is-not-following {
+  display: none;
+}
+
+/* Styling a Thread in a Thread (Either Quoted Thread or Reposted Thread) End*/
+/* Styling a Replied Thread */
+.thread-reply {
+  position: relative;
+}
+
+.thread-reply .replied-thread {
+  border-bottom: 1px solid transparent !important;
+}
+
+.thread-reply-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.thread-reply-container .thread {
+  width: 100%;
+}
+
+.thread-reply-container .reply-icon {
+  width: 100px;
+  height: 100px;
+  margin-left: -36.5px;
+  margin-top: -40px;
+}
+
+@media screen and (max-width: 450px) {
+  .thread-reply-container .reply-icon {
+    width: 80px;
+    height: 80px;
+    margin-left: -21.5px;
+    margin-top: -40px;
+  }
+}
+/* Styling a Replied Thread End*/
+/* Styling the Body of a Thread Body (media, caption) End*/
+/* Styling the Body of a Thread*/
+/* Styling the Footer of a Thread */
+.thread .thread-footer {
+  margin-top: 10px;
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.thread .thread-footer .thread-likes-and-replies-container {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: #B0B0B0;
+  letter-spacing: 0.6px;
+}
+
+.thread .thread-footer .thread-footer-item {
+  margin: auto 3px;
+  font-weight: 600;
+}
+
+.thread .thread-footer .likes {
+  display: flex;
+  align-items: center;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures .liked-thread-profile-picture {
+  position: absolute;
+  background: var(--bg-dark);
+  border-radius: 50%;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures .liked-thread-profile-picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures .liked-thread-profile-picture:first-of-type {
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures .liked-thread-profile-picture:nth-of-type(2) {
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.thread .thread-footer .likes .liked-thread-profile-pictures .liked-thread-profile-picture:nth-of-type(3) {
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.thread .thread-footer .thread-footer-icons {
+  display: flex;
+  margin: 7px 0;
+}
+
+.thread .thread-footer .thread-footer-icons .thread-footer-icon {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thread .thread-footer .thread-footer-icons .thread-footer-icon:first-of-type {
+  margin-left: 0;
+}
+
+.thread .thread-footer .thread-footer-icons .thread-footer-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Styling the Footer of a Thread  End*/
+/* Styling the contents of a Thread End*/
+/* Thread Styling End*/
+/* Styling the loading animation at bottom to load more threads */
+.feed .loading {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.feed .loading svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Styling the loading animation at bottom to load more threads End*/
+/* Styling for the Feed Footer */
+.feed .footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Styling for the Feed Footer End */
+/* Posts Feed end*//*# sourceMappingURL=feed.css.map */
