@@ -1,5 +1,8 @@
-![Loading Page](assets/preview/project-loading.png)
 <h1 align="center">Threads App inspired by Instagram Web version by NFORSHIFU234 Dev || Shifu-Nfor Nyuiring-yoh Rhagninyui </h1>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4de84f0e-bf75-4b4e-af11-95ed8f4fc074/deploy-status)](https://app.netlify.com/sites/nforshifu234dev-threadsapp/deploys)
+
+![Loading Page](assets/preview/project-loading.png)
 
 <p>
 
